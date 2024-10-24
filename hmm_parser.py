@@ -6,17 +6,24 @@ from collections import defaultdict
 file = "test/ERX288947.23.dc.fltr.hmmout"
 
 def parse_hmmout(hmmout):
-	input = open(hmmout, "r")
+    input = open(hmmout, "r")
+    split = []
+    for i in input.readlines():
+        line = i.rstrip()
+        if line.startswith("#"):
+            pass
+        else:
+            #newline = re.sub(r"\s+", "\t", line)
+            #split = []
+            #split = line.split(" ", maxsplit= 19)
+            
+            split += re.split(r"\s+", line, maxsplit=18) # change number for different files
+            #print(split)
+        
+    return split
+#print(newline)
 
-	for i in input.readlines():
-		line = i.rstrip()
-		if line.startswith("#"):
-			pass
-		else:
-			newline = re.sub(r"\s+", "\t", line)
-			#print(newline)
-			
-    #return newline
+#return newline
 
 
-parse_hmmout(file)
+print(parse_hmmout(file))
