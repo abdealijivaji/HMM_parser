@@ -2,7 +2,8 @@
 import sys, os, re, shlex, subprocess, pandas, argparse
 from collections import defaultdict
 
-file = "test/ERX288947.23.dc.fltr.hmmout"
+input = sys.argv[1]
+output = sys.argv[2]
 
 def parse_hmmout(hmmout):
     input = open(hmmout, "r")
@@ -33,7 +34,7 @@ cols = ["\t".join(colnames)]
 #parse_hmmout(file)
 #print(parse_hmmout(file))
 df1 = pandas.DataFrame(cols)
-df2 = pandas.DataFrame(parse_hmmout(file))
+df2 = pandas.DataFrame(parse_hmmout(input))
 #print(df)
 df = pandas.concat([df1, df2])
-df.to_csv("./test.txt", index=False, header=False)
+df.to_csv(output, index=False, header=False)
