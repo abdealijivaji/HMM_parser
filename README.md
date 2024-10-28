@@ -1,6 +1,6 @@
 # HMM_parser
 
-Trying to create a tool for parsing HMMer output with all columns included
+Trying to create a tool for parsing HMMer3 output with all columns included
 
 This has been as part of a pet project of mine to develop my python skills. For any issues/suggestions, please create an issue on GitHub or feel free to email me at [abdeali\@vt.edu](mailto:abdeali@vt.edu){.email}
 
