@@ -91,7 +91,9 @@ def run_program(if_prod, input, output):
             cols = ["\t".join(tbl_cols)]
             df1 = pandas.DataFrame(cols)
             df2 = pandas.DataFrame(parse_hmmout(input, len))
-        
+    else:
+        print("\tError: The file contains an unknown number of columns.\n\tAre you sure it's a HMM tblout or domtblout?")
+        sys.exit()    
     df = pandas.concat([df1, df2])
     df.to_csv(output, index=False, header=False)
 
