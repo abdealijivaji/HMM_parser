@@ -22,7 +22,7 @@ cd HMM_parser
 The tool has been set up to use python directly from your environment.
 
 ```{bash}
-./hmm_parser -i test/test.out -o output/test.tsv 
+./hmm_parser -i test/test.tblout -o output/test.tsv 
 # For parsing prodigal header 
 ./hmm_parser -i test/ERX288947.23.dc.fltr.hmmout -o output/test_prod.tsv -p
 ```
